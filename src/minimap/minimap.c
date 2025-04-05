@@ -6,7 +6,7 @@
 /*   By: kkhai-ki <kkhai-ki@student.42kl.edu.my>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/22 13:07:26 by kkhai-ki          #+#    #+#             */
-/*   Updated: 2025/03/14 10:58:52 by kkhai-ki         ###   ########.fr       */
+/*   Updated: 2025/04/06 00:28:54 by kkhai-ki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,10 @@ static void	draw_minimap(t_fpoint map, int range, t_map *map_data, t_vars *vars)
 
 	tile_size = map_data->tile_size;
 	pixel.y = map.y * tile_size;
-	while (pixel.y < (map.y + range) * map_data->tile_size)
+	while (pixel.y < (map.y + range) * tile_size)
 	{
-		pixel.x = map.x * map_data->tile_size;
-		while (pixel.x < (map.x + range) * map_data->tile_size)
+		pixel.x = map.x * tile_size;
+		while (pixel.x < (map.x + range) * tile_size)
 		{
 			screen.x = (int)pixel.x - map.x * tile_size + MINIMAP_OFFSET;
 			screen.y = (int)pixel.y - map.y * tile_size + MINIMAP_OFFSET;
